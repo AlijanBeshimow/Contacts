@@ -64,3 +64,18 @@ def update():
             print("Contact updated")
     if not found_contact:
         print("Contact not found")
+
+
+def remove_contact():
+    contacts = load()
+    removed = False
+    user_input = input("Name to remove: ")
+    print()
+    for contact in contacts:
+        if contact.name == user_input:
+            contacts.remove(contact)
+            save(contacts)
+            removed = True
+            print(contact.name, "Removed")
+    if not removed:
+        print("COntact not found")
