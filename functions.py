@@ -43,7 +43,7 @@ def find():
     print()
     for contact in contacts:
         if contact.name == user_input:
-            print(contact.name, contact.phone)
+            print(contact.name, contact.phone, contact.email)
         found_contact = True
     if not found_contact:
         print("Contact not found")
