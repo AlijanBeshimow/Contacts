@@ -3,13 +3,15 @@ import pickle
 from classes import Contact
 
 
-def setup():
+def load_contacts():
     try:
         with open("contacts.pickle", 'rb') as file:
-            pickle.load(file)
+            contacts = pickle.load(file)
+            return contacts
     except:
         with open("contacts.pickle", 'wb') as file:
             pickle.dump([], file)
+            return []
 
 
 def save(list_to_save):
@@ -17,14 +19,8 @@ def save(list_to_save):
         pickle.dump(list_to_save, file)
 
 
-def load():
-    with open("contacts.pickle", 'rb') as file:
-        loaded_contact = pickle.load(file)
-    return loaded_contact
-
-
 def add():
-    contacts = load()
+    contacts = load_contacts()
     name = input("Name: ")
     phone = input("Phone: ")
     email = input("Email: ")
@@ -35,8 +31,13 @@ def add():
     print("New contact added")
 
 
+def view():
+    contacts = load_contacts()
+    print(*contacts)
+
+
 def find():
-    contacts = load()
+    contacts = load_contacts()
     found_contact = False
     user_input = input("Name to find: ").capitalize()
     print()
@@ -49,7 +50,7 @@ def find():
 
 
 def update():
-    contacts = load()
+    contacts = load_contacts()
     found_contact = False
     user_input = input("Name to update: ")
     print()
@@ -67,7 +68,7 @@ def update():
 
 
 def remove_contact():
-    contacts = load()
+    contacts = load_contacts()
     removed = False
     user_input = input("Name to remove: ")
     print()

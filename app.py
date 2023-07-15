@@ -1,8 +1,7 @@
-from functions import setup, add, load, find, update, remove_contact, delete_all
+from functions import add, find, load_contacts, update, remove_contact, delete_all, view
 
 
-setup()
-
+load_contacts()
 
 while True:
     option = input("""
@@ -18,7 +17,7 @@ while True:
     if option == "a":
         add()
     if option == "v":
-        print(*load())
+        view()
     if option == "f":
         find()
     if option == "u":
