@@ -1,4 +1,4 @@
-from functions import setup, add, load, find, update, remove_contact
+from functions import setup, add, load, find, update, remove_contact, delete_all
 
 
 setup()
@@ -11,6 +11,7 @@ while True:
 [F]ind
 [U]pdate
 [R]emove
+[D]elete All
 [Q]uit
                 Choice: """)
     print()
@@ -24,5 +25,7 @@ while True:
         update()
     if option == "r":
         remove_contact()
+    if option == "d":
+        delete_all()
     if option == "q":
         break

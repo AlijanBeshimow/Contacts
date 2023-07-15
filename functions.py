@@ -78,4 +78,10 @@ def remove_contact():
             removed = True
             print(contact.name, "Removed")
     if not removed:
-        print("COntact not found")
+        print("C0ntact not found")
+
+
+def delete_all():
+    with open("contacts.pickle", 'wb') as file:
+        pickle.dump([], file)
+        print("All contacts deleted")
