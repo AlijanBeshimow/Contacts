@@ -1,30 +1,27 @@
-from functions import add, find, load_contacts, update, remove_contact, delete_all, view
+from functions import add, find, update, remove_contact, view
 
-
-load_contacts()
 
 while True:
     option = input("""
-[A]dd
-[V]iew
-[F]ind
-[U]pdate
-[R]emove
-[D]elete All
-[Q]uit
-                Choice: """)
+1. Add Contact
+2. View All Contacts
+3. Find Contact
+4. Update Contact
+5. Remove Contact
+
+                   
+                           Choice: """)
     print()
-    if option == "a":
+    if option == "1":
         add()
-    if option == "v":
+    if option == "2":
         view()
-    if option == "f":
+    if option == "3":
         find()
-    if option == "u":
+    if option == "4":
         update()
-    if option == "r":
+    if option == "5":
         remove_contact()
-    if option == "d":
-        delete_all()
+
     if option == "q":
         break

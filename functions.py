@@ -1,22 +1,6 @@
-import pickle
+from files import save, load_contacts
 
 from classes import Contact
-
-
-def load_contacts():
-    try:
-        with open("contacts.pickle", 'rb') as file:
-            contacts = pickle.load(file)
-            return contacts
-    except:
-        with open("contacts.pickle", 'wb') as file:
-            pickle.dump([], file)
-            return []
-
-
-def save(list_to_save):
-    with open("contacts.pickle", 'wb') as file:
-        pickle.dump(list_to_save, file)
 
 
 def add():
@@ -79,10 +63,4 @@ def remove_contact():
             removed = True
             print(contact.name, "Removed")
     if not removed:
-        print("C0ntact not found")
-
-
-def delete_all():
-    with open("contacts.pickle", 'wb') as file:
-        pickle.dump([], file)
-        print("All contacts deleted")
+        print("Contact not found")
