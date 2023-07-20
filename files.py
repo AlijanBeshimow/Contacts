@@ -15,3 +15,11 @@ def load_contacts():
 def save(list_to_save):
     with open("contacts.pickle", 'wb') as file:
         pickle.dump(list_to_save, file)
+
+
+def remove_all_contact():
+    with open("contacts.pickle", 'wb') as file:
+        pickle.dump([], file)
+        print()
+        print("All Contacts Removed")
+    return []
