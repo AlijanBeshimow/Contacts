@@ -40,7 +40,7 @@ def update():
     for contact in contacts:
         if contact.name == user_input:
             option = input(f"""
-What you want to update for contact: [{contact.name}]
+What you want to update for contact: {contact.name.capitalize()}
 
 1)Name  
 2)Phone  
