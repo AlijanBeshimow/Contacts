@@ -20,7 +20,7 @@ def view():
     print(*contacts)
 
 
-def find():
+def find_contact():
     contacts = load_contacts()
     user_input = input("Enter contact name to find: ")
     print()

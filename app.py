@@ -1,5 +1,5 @@
 from files import remove_all_contact
-from functions import add, add_address, find, update, remove_contact, view
+from functions import add, add_address, find_contact, update, remove_contact, view
 
 
 while True:
@@ -20,7 +20,7 @@ while True:
     if option == "2":
         view()
     if option == "3":
-        find()
+        find_contact()
     if option == "4":
         update()
     if option == "5":
