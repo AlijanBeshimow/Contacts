@@ -46,6 +46,7 @@ What you want to update for contact: {contact.name.capitalize()}
 2)Phone  
 3)Email  
 4)Address
+5)Change All
 
              Choice: """)
             print()
@@ -64,6 +65,15 @@ What you want to update for contact: {contact.name.capitalize()}
                 new_address.city = input("Enter city: ")
                 contact.address = new_address
                 print("Address updated")
+            if option == '5':
+                contact.name = input("New name: ")
+                contact.phone = input("New phone: ")
+                contact.email = input("New email: ")
+                new_address = Address()
+                new_address.country = input("New country: ")
+                new_address.city = input("New city: ")
+                contact.address = new_address
+                print("Contact details updated")
             save(contacts)
             break
     else:
