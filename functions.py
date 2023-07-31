@@ -23,14 +23,14 @@ def view():
 def find_contact():
     contacts = load_contacts()
     user_input = input("Enter contact name to find: ")
+    found = False
     print()
     for contact in contacts:
-        if contact.name == user_input:
-            print(
-                f"{contact.name.capitalize()} - {contact.phone} - {contact.email}  {contact.address}")
-            break
-    else:
-        print("Contact not found. Please check name and try again.")
+        if user_input == contact.name:
+            print(contact)
+            found = True
+    if not found:
+        print("Contact not found")
 
 
 def update():
